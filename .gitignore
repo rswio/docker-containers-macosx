@@ -195,6 +195,12 @@ DocProject/Help/html
 # Click-Once directory
 publish/
 
+# .DS_Store files
+.DS_Store
+
+# N8N data folder
+n8n/n8n_data/
+
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
