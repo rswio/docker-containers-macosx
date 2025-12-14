@@ -1,0 +1,17 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest 
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678" 
+    environment:
+      - GENERIC_TIMEZONE=Europe/London
+      - N8N_HOST=<your_domain_or_ip>
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_ENCRYPTION_KEY=<your_encryption_key>
+    volumes:
+      # Keeps all your N8N data (credentials, workflows, etc) persistent
+      - ./n8n_data:/home/node/.n8n
